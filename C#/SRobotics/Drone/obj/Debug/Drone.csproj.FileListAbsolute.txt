@@ -1,0 +1,7 @@
+C:\Users\Aviad\Desktop\SRobotics\Drone\bin\Debug\Drone.dll
+C:\Users\Aviad\Desktop\SRobotics\Drone\bin\Debug\Drone.pdb
+C:\Users\Aviad\Desktop\SRobotics\Drone\bin\Debug\Core.dll
+C:\Users\Aviad\Desktop\SRobotics\Drone\bin\Debug\Core.pdb
+C:\Users\Aviad\Desktop\SRobotics\Drone\obj\Debug\Drone.csprojResolveAssemblyReference.cache
+C:\Users\Aviad\Desktop\SRobotics\Drone\obj\Debug\Drone.dll
+C:\Users\Aviad\Desktop\SRobotics\Drone\obj\Debug\Drone.pdb

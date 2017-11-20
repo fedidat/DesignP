@@ -1,0 +1,9 @@
+C:\Users\Aviad\Desktop\Shittylympics\Shittylympics\bin\Debug\Shittylympics.exe.config
+C:\Users\Aviad\Desktop\Shittylympics\Shittylympics\obj\Debug\Shittylympics.csprojResolveAssemblyReference.cache
+C:\Users\Aviad\Desktop\Shittylympics\Shittylympics\bin\Debug\Shittylympics.exe
+C:\Users\Aviad\Desktop\Shittylympics\Shittylympics\bin\Debug\Shittylympics.pdb
+C:\Users\Aviad\Desktop\Shittylympics\Shittylympics\obj\Debug\Shittylympics.exe
+C:\Users\Aviad\Desktop\Shittylympics\Shittylympics\obj\Debug\Shittylympics.pdb
+Z:\!                                                                    ! DP בסמח משהו\Shittylympics\Shittylympics\bin\Debug\Shittylympics.exe.config
+Z:\!                                                                    ! DP בסמח משהו\Shittylympics\Shittylympics\obj\Debug\Shittylympics.exe
+Z:\!                                                                    ! DP בסמח משהו\Shittylympics\Shittylympics\obj\Debug\Shittylympics.pdb
