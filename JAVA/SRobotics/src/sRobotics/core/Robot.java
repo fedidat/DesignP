@@ -6,18 +6,15 @@ public class Robot
 {
     public Robot()
     {
-        commands = new RobotCommands();
-        state = new RobotState();
+        context = new RobotContext();
     }
 
-    private RobotState state;
-    private RobotCommands commands;
+    private RobotContext context;
 
-    public RobotCommands getCommands() { return commands; }
-    public RobotState getState() { return state; }
+    public RobotContext getContext() { return context; }
 
     public void ChangeActivationState(ActivationStateType type)
     {
-        getCommands().turnOn.Execute(this, type);
+        this.getContext().getCommands().turnOn.Execute(this.getContext(), type);
     }
 }

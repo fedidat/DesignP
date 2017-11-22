@@ -1,14 +1,15 @@
 package sRobotics;
 
 import sRobotics.core.*;
+import sRobotics.drone.EmulationRobot;
 
 public class Main {
 
     public static void main(String[] args)
     {
-        Context ctx = new Context();
+        ClientContext ctx = new ClientContext();
 
-        sRobotics.drone.Reciever testRobot1 = new sRobotics.drone.Reciever();
+        EmulationRobot testRobot1 = new EmulationRobot();
 
         ctx.ChangeRobot(testRobot1);
 
