@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="game.css" />
+        <script src="code/controls.js"></script>
+        <script src="code/player.js"></script>
+        <script>
+            var p1, p2;
+            
+            function play(event)
+            {
+                p1.run(event);
+                p2.run(event);
+                //p1.move(2, 2);
+                //console.log(event);
+            }
+            
+            function start()
+            {
+                var p1Controls = new Controls('ArrowUp', 'ArrowRight', 'ArrowDown', 'ArrowLeft');
+
+                p1 = new Player('p1', p1Controls);
+                p2 = new Player('p2', new Controls('KeyW', 'KeyD', 'KeyS', 'KeyA'));
+
+                //p1.move(10, 50);
+
+                window.onkeydown = play;
+            }   
+        </script>
+    </head>
+    <body onload="start()">
+        <div class="arena">
+            <div class="flag"></div>
+
+            <div class="player p1"></div>
+            <div class="player p2"></div>
+            
+        </div>
+    </body>
+</html>
