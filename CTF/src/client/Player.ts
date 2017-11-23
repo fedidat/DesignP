@@ -2,12 +2,18 @@ import { Point } from "./Point";
 import { Dimension } from "./Dimension";
 import { Graphics } from "./Graphics";
 import { Direction } from "./Direction";
+import { Input } from "./Input";
 
 export class Player {
     username: string;
     position: Point;
     id: number;
     pawnFile: string;
+    dimension: Dimension;
+    speed: number;
+    frames: number;
+    image: HTMLImageElement;
+    public done: boolean = false;
 
     static startingPoints: Point[] = [
         new Point(0,0),
@@ -28,61 +34,41 @@ export class Player {
         var playerX: number = Player.startingPoints[this.id].x * boardDimensions.width;
         var playerY: number = Player.startingPoints[this.id].y * boardDimensions.height;
         this.position = new Point(playerX, playerY);
+        this.dimension = new Dimension(50, 50);
+        this.speed = 10;
+        this.frames = 16;
+        this.image = new Image();
+        this.image.src = this.pawnFile;
+        this.image.onload = () => this.done = true;
     }
 
-    public draw(): void {
-        Graphics.drawImage(this.pawnFile, this.position, new Dimension(50, 50));
+    public draw(graphics: Graphics): void {
+        if(this.done) {
+            graphics.drawImage(this.image, this.position, new Dimension(50, 50));
+        }
     }
 
-    
-    // switch (keyEvent.keyCode) {
-    //     case 38: // Up arrow
-    //     case 87: // W
-    //         if (this.position.y - dy > 0) {
-    //             this.position.y -= dy;
-    //         }
-    //         break;
-    //     case 40: // Down arrow
-    //     case 83: // S
-    //         if (this.position.y + dy < canvasDimension.height) {
-    //             this.position.y += dy;
-    //         }
-    //         break;
-    //     case 37: // Left arrow
-    //     case 65: // A
-    //         if (this.position.x - dx > 0) {
-    //             this.position.x -= dx;
-    //         }
-    //         break;
-    //     case 39: // Right arrow
-    //     case 68: // D
-    //         if (this.position.x + dx < canvasDimension.width) {
-    //             this.position.x += dx;
-    //         }
-    //         break;
-    // }
     public move(direction: Direction, canvasDimension: Dimension): void {
         var dy: number = 10, dx: number = 10;
-        switch(direction) {
-            case Direction.LEFT:
-                if (this.position.x - dx > 0) {
-                    this.position.x -= dx;
-                }
-                break;
-            case Direction.RIGHT:
-                if (this.position.x + dx < canvasDimension.width) {
-                    this.position.x += dx;
-                }
-                break;
-            case Direction.UP:
-                if (this.position.y - dy > 0) {
-                    this.position.y -= dy;
-                }
-                break;
-            case Direction.DOWN:
-                if (this.position.y + dy < canvasDimension.height) {
-                    this.position.y += dy;
-                }
+        if(Input.directionStatus(Direction.LEFT)) {
+            if (this.position.x - dx > 0) {
+                this.position.x -= dx;
+            }
+        }
+        else if(Input.directionStatus(Direction.RIGHT)) {
+            if (this.position.x + dx < canvasDimension.width) {
+                this.position.x += dx;
+            }
+        }
+        else if(Input.directionStatus(Direction.UP)) {
+            if (this.position.y - dy > 0) {
+                this.position.y -= dy;
+            }
+        }
+        else if(Input.directionStatus(Direction.DOWN)) {
+            if (this.position.y + dy < canvasDimension.height) {
+                this.position.y += dy;
+            }
         }
     }
 }
