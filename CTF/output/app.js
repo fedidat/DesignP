@@ -1,0 +1,30 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var express = require("express");
+var bodyParser = require("body-parser");
+var cookieParser = require("cookie-parser");
+var logger = require("morgan");
+var errorHandler = require("errorhandler");
+var path = require("path");
+var app = express();
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cookieParser());
+app.use(express.static(path.join(__dirname, '../node_modules/bootstrap/dist')));
+app.use(express.static(path.join(__dirname, '../node_modules/popper.js/dist')));
+app.use(express.static(path.join(__dirname, '../node_modules/jquery/dist')));
+app.use(express.static(path.join(__dirname, '../node_modules/jquery.cookie')));
+app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "./client")));
+app.use(express.static(path.join(__dirname, "../_bundles")));
+var users = require('./routes/users');
+app.use('/', users);
+var index = require('./routes/index');
+app.use('/', index);
+app.use(express.static(path.join(__dirname, '../views')));
+app.use(errorHandler());
+app.listen(3000, function () {
+    console.log('CTF');
+});
+//# sourceMappingURL=app.js.map

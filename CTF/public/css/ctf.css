@@ -1,0 +1,13 @@
+#boardarea img {
+    height: 50px;
+}
+
+#tweets .name{
+    /* Bold usernames */
+    font-weight: bold;
+}
+
+textarea {
+    /* No textarea resizing */
+    resize: none;
+}
